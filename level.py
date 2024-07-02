@@ -9,7 +9,9 @@ class Level:
         self.setup()
     def setup(self):
         self.player = Player((200,150), self.player_sprite)
-        self.enemy = Enemy((300,400), self.enemy_sprites)
+        self.enemy1 = Enemy((300,400), self.enemy_sprites)
+        self.enemy2 = Enemy((500,400), self.enemy_sprites)
+        self.enemy3 = Enemy((700,400), self.enemy_sprites)
     def run(self,dt):
         self.display_surface.fill('black')
         self.enemy_sprites.draw(self.display_surface)

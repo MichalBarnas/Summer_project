@@ -17,8 +17,9 @@ class Game:
                     pygame.quit()
                     sys.exit()
                     
-            dt = self.clock.tick() / 1000
+            dt = self.clock.tick() / 10000
             self.level.run(dt)
+            self.level.collizion(dt)
             pygame.display.update()
 if __name__ == '__main__':
     game = Game()

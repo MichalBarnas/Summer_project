@@ -23,6 +23,6 @@ class Level:
         self.player_sprite.draw(self.display_surface)
         self.player_sprite.update()
 
-    def collizion(self, dt):
+    def collision(self, dt):
         if pygame.sprite.spritecollide(self.player_sprite.sprite, self.enemy_sprites, True):
             print("kolizja")

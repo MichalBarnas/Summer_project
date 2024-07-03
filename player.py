@@ -9,7 +9,8 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.Surface((64, 64))
         self.image.fill('blue')
         self.rect = self.image.get_rect(center=pos)
-
+        #statystyki, jeszcze nie wiem jakie i co która znaczy, wszystko testowo
+        self.stats = [10,10,10,10,10,10]
     def movement(self):
         keys = pygame.key.get_pressed()
 
@@ -21,7 +22,17 @@ class Player(pygame.sprite.Sprite):
             self.rect[0] -= 2
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.rect[0] += 2
-
+            
+        #borderlines
+        if self.rect[0] <0:
+            self.rect[0]=0
+        if self.rect[0] >1216:
+            self.rect[0]=1216
+            
+        if self.rect[1] <0:
+            self.rect[1]=0
+        if self.rect[1] >736:
+            self.rect[1]=736
         time.sleep(0.005)
 
     def update(self):

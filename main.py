@@ -20,7 +20,7 @@ class Game:
 
             dt = self.clock.tick() / 10000
             self.level.run(dt)
-            self.level.collision(dt)
+           
             pygame.display.update()
 
 

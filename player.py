@@ -35,5 +35,7 @@ class Player(pygame.sprite.Sprite):
             self.rect[1]=736
         time.sleep(0.005)
 
+    
+
     def update(self):
         self.movement()

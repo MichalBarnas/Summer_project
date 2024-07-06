@@ -11,6 +11,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center=pos)
         #statystyki, jeszcze nie wiem jakie i co która znaczy, wszystko testowo
         self.stats = [10,10,10,10,10,10]
+
     def movement(self):
         keys = pygame.key.get_pressed()
 
@@ -33,7 +34,7 @@ class Player(pygame.sprite.Sprite):
             self.rect[1]=0
         if self.rect[1] >736:
             self.rect[1]=736
-        time.sleep(0.005)
+        # time.sleep(0.005)
 
     
 

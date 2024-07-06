@@ -10,6 +10,8 @@ class Game:
         pygame.display.set_caption('Gravedigger-warrior')
         self.clock = pygame.time.Clock()
         self.level = Level()
+        self.tickrate = 1/120.0
+        self.cl_dt = 0.0
 
     def run(self):
         while True:
@@ -18,8 +20,12 @@ class Game:
                     pygame.quit()
                     sys.exit()
 
-            dt = self.clock.tick() / 10000
-            self.level.run(dt)
+            # dt = self.clock.tick() / 10000
+            self.cl_dt += self.clock.tick()/1000
+            while self.cl_dt > self.tickrate:
+                self.level.run(self.cl_dt)
+                self.cl_dt -= self.tickrate
+                
            
             pygame.display.update()
 

@@ -11,10 +11,11 @@ class Level:
         self.npc_sprites = pygame.sprite.Group()
         self.setup()
         self.game_state = 0
+        
     def setup(self):
         self.player = Player((100, 400), self.player_sprite)
-        self.enemy1 = Enemy((random.randint(200,500),random.randint(50,750)), self.enemy_sprites, (230,100,30),[3,3,3,3,3,3])
-        self.npc1 = Enemy((random.randint(850,1230),random.randint(50,750)), self.npc_sprites,(100,200,200),[1,1,1,1,1,1])
+        self.enemy1 = Enemy((random.randint(200,500),random.randint(50,750)), self.enemy_sprites, (230,100,30), [3,3,3,3,3,3])
+        self.npc1 = Enemy((random.randint(850,1230),random.randint(50,750)), self.npc_sprites, (100,200,200), [1,1,1,1,1,1])
 
     def run(self, dt):
         if self.game_state == 0:

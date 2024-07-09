@@ -2,6 +2,7 @@ import pygame
 import sys
 import config as c
 from level import Level
+from player import Player
 
 
 
@@ -17,33 +18,34 @@ class Game:
 
     def events(self):
         for event in pygame.event.get():
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        sys.exit(0)
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
-                        self.player.ruch("d")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
-                        self.player.ruch("a")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_w:
-                        self.player.ruch("w")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
-                        self.player.ruch("s")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-                        self.player.ruch("space")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
-                        self.player.ruch("d")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
-                        self.player.ruch("a")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
-                        self.player.ruch("s")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
-                        self.player.ruch("w")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_BACKSPACE:
-                        self.player.ruch("back")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
-                        self.player.ruch("enter")
-                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                        sys.exit(0)
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
+                # self.player.ruch("d")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
+                # self.player.ruch("a")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_w:
+                # self.player.ruch("w")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
+                # self.player.ruch("s")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                # self.player.ruch("space")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+                # self.player.ruch("d")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+                # self.player.ruch("a")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
+                # self.player.ruch("s")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+                # self.player.ruch("w")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_BACKSPACE:
+                # self.player.ruch("back")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+                # self.player.ruch("enter")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                sys.exit()
 
     def run(self):
         while True:                    

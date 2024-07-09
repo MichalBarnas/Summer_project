@@ -1,17 +1,18 @@
 import pygame
 import time
+import config as c
 
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos, group):
         super().__init__(group)
 
-        self.image = pygame.Surface((64, 64))
+        self.image = pygame.Surface(c.PLAYER_SIZE)
         self.image.fill('blue')
         self.rect = self.image.get_rect(center=pos)
         #statystyki, jeszcze nie wiem jakie i co która znaczy, wszystko testowo
         self.stats = [10,10,10,10,10,10]
-        self.speed = 5
+        self.speed = c.SPEED
 
     def movement(self):
         keys = pygame.key.get_pressed()
@@ -26,15 +27,15 @@ class Player(pygame.sprite.Sprite):
             self.rect[0] += self.speed
             
         #borderlines
-        if self.rect[0] <0:
-            self.rect[0]=0
-        if self.rect[0] >1216:
-            self.rect[0]=1216
+        if self.rect[0] < 0:
+            self.rect[0] = 0
+        if self.rect[0] > (c.SCREEN_WIDTH - c.PLAYER_SIZE[0]):
+            self.rect[0] = (c.SCREEN_WIDTH - c.PLAYER_SIZE[0])
             
-        if self.rect[1] <0:
-            self.rect[1]=0
-        if self.rect[1] >736:
-            self.rect[1]=736
+        if self.rect[1] < 0:
+            self.rect[1] = 0
+        if self.rect[1] > (c.SCREEN_HIGHT - c.PLAYER_SIZE[1]):
+            self.rect[1] = (c.SCREEN_HIGHT - c.PLAYER_SIZE[1])
         # time.sleep(0.005)
 
     
